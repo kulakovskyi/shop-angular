@@ -1,1 +1,6 @@
-<p>main-page works!</p>
+<div *ngIf="products$ | async as products"
+      class="dashboard">
+  <app-product class="box"
+               *ngFor="let product of products | sorting: productService.type" [product]="product" >
+  </app-product>
+</div>

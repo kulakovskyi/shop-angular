@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  apiKey: "AIzaSyCe9WO0D4wGy-Zd2qHGE_3DvnM3eyq7LlE",
+  apiKey: "AIzaSyBE3Vr5rgsmmvCB5IHcs79ik4gUs2ESLig",
+  fbDbUrl: 'https://shop-angular-55d27-default-rtdb.firebaseio.com/'
 }
 

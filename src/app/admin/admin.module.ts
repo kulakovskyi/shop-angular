@@ -9,6 +9,11 @@ import { EditPageComponent } from './components/edit-page/edit-page.component';
 import { OrdersPageComponent } from './components/orders-page/orders-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {authGuard} from "../shared/guards/auth.guard";
+import {QuillModule} from "ngx-quill";
+import {AuthService} from "../shared/services/auth.service";
+import {ProductService} from "../shared/services/product.service";
+import {SearchPipe} from "../shared/pipes/search.pipe";
+
 
 
 const routes: Routes = [
@@ -23,15 +28,16 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports:[
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes),
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule.forChild(routes),
+        QuillModule.forRoot(),
 
-  ],
+    ],
   exports:[
-    RouterModule
+    RouterModule,
   ],
   declarations: [
     AdminLayoutComponent,
@@ -39,9 +45,10 @@ const routes: Routes = [
     AddPageComponent,
     DashboardPageComponent,
     EditPageComponent,
-    OrdersPageComponent
+    OrdersPageComponent,
+    SearchPipe
   ],
-  providers:[]
+  providers:[AuthService, ProductService]
 })
 
 export class AdminModule{}
