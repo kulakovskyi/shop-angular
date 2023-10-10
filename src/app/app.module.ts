@@ -11,8 +11,9 @@ import {AdminModule} from "./admin/admin.module";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./shared/interceptors/auth.interceptor";
 import { ProductComponent } from './product/product.component';
-import {QuillViewHTMLComponent} from "ngx-quill";
+import {QuillEditorComponent, QuillViewHTMLComponent} from "ngx-quill";
 import { SortingPipe } from './shared/pipes/sorting.pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -32,6 +33,9 @@ import { SortingPipe } from './shared/pipes/sorting.pipe';
         AppRoutingModule,
         AdminModule,
         QuillViewHTMLComponent,
+        FormsModule,
+        QuillEditorComponent,
+        ReactiveFormsModule,
     ],
     providers: [{
         provide: HTTP_INTERCEPTORS,
